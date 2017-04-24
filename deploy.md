@@ -155,39 +155,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, '/var/www/venv/feb_webapp/project/media/')
 ```
 
 
-Exapmle of 000-default.conf
-
-```
-<VirtualHost *:80>
-ServerName localhost
-ServerAdmin webmaster@localhost
-
-Alias /static /var/www/venv/feb_webapp/project/static
-<Directory /var/www/venv/feb_webapp/project/static>
-   Require all granted
- </Directory>
-
-Alias /media /var/www/venv/feb_webapp/project/media
-<Directory /var/www/venv/feb_webapp/project/media>
-   Require all granted
-</Directory>
-
-<Directory /var/www/venv/feb_webapp/project/project>
-    <Files wsgi.py>
-        Require all granted
-    </Files>
-</Directory>
-
-WSGIDaemonProcess home python-path=/var/www/venv/feb_webapp/project/:/var/www/venv/lib$
-WSGIProcessGroup home
-WSGIScriptAlias / /var/www/venv/feb_webapp/project/project/wsgi.py
-
-
-ErrorLog ${APACHE_LOG_DIR}/error.log
-CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
-
-```
 
 
 
